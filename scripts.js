@@ -135,7 +135,11 @@ function getIndex(values, depth, targetPlayer, playerMove) {
         // for (const i in weightSteps) {
         //     if (weightSteps[i].stepsWin <= 2) return weightSteps[i].value
         // }
-        weightSteps = weightSteps.sort((a, b) => a.stepsFail < b.stepsFail ? 1 : -1)
+        weightSteps = weightSteps.sort((a, b) => {
+            if (a.stepsFail < b.stepsFail) return 1
+            if (a.stepsFail === b.stepsFail && a.weight < b.weight) return 1
+            return -1
+        })
         console.log(weightSteps[0].value)
         return weightSteps[0].value
     }
