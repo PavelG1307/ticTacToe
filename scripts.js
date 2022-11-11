@@ -87,7 +87,21 @@ function move() {
     // if (value[index] !== null) return move()
     value[index] = players.indexOf(player)
     document.getElementById(`cel_${index}`).innerText = player
-    changePlayer()
+    const status = checkValue(value)
+    if (!status) {
+        changePlayer(player)
+        return
+    }
+    if (status === 'WIN_0') {
+        setMessage(`Выиграл X`)
+    }
+    if (status === 'WIN_1') {
+        setMessage(`Выиграл O`)
+    }
+    if (status === 'DRAW') {
+        setMessage(`Ничья`)
+    }
+
 }
 
 function getIndex(values, depth, targetPlayer, playerMove) {
