@@ -11,7 +11,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(226, 230, 255);
+    /* background-color: rgb(226, 230, 255); */
+    background-color:  #000;
 }
 .container{
     width: 600px;
@@ -27,21 +28,33 @@ body {
 }
 
 .cell{
-    background-color: #fff;
+    /* background-color: #fff; */
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 100px;
-    border: solid 1px #000;
+    /* border: solid 1px #fff; */
     height: 100%;
     width: 200px;
-    border-radius:40px;
+    color: #fff;
+    /* border-radius:40px; */
+}
+
+.centerg {
+    border-bottom: solid 2px #fff;
+    border-top: solid 2px #fff;
+}
+
+.centerv {
+    border-left: solid 2px #fff;
+    border-right: solid 2px #fff;
 }
 
 .message{
     margin-top: 20px;
     width: 420px;
     text-align: center;
+    color: #fff;
 }
