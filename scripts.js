@@ -1,7 +1,9 @@
 const value = [ null, null, null, null, null, null, null, null, null ]
 
-let player = 'X'
+const firstMove = Math.round(Math.random())
+console.log(firstMove)
 const players = ['X', 'O']
+let player = players[firstMove]
 let weightSteps = []
 
 const winCombs = {
@@ -25,7 +27,9 @@ const winCombs = {
     ]
 }
 
+
 const message = document.querySelector('.message')
+if (firstMove === 1) move()
 const cells = document.getElementsByClassName('cell')
 for (i in cells) {
     cells[i].addEventListener('click', (event) => {
@@ -51,6 +55,7 @@ for (i in cells) {
         }
     })
 }
+
 
 function changePlayer() {
     if (player === 'X') player = 'O'
